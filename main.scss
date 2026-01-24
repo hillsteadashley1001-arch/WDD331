@@ -1,0 +1,113 @@
+// 1. SCSS Variables (using at least once as required)
+$primary-font: 'Lora', serif;
+$body-font: Helvetica, Arial, sans-serif;
+$text-color: #333;
+$bg-color: #fff;
+$border-color: #d0d0d0;
+$max-width: 480px;
+$header-padding: 2rem 1rem 0rem;
+$title-size: 2.8rem;
+$title-line-height: 1.1;
+
+// 2. Mixins (using at least once as required)
+@mixin center-text {
+  text-align: center;
+}
+
+@mixin horizontal-rule {
+  content: "";
+  display: block;
+  border-top: 1px solid $border-color;
+  margin-bottom: 1rem;
+}
+
+@mixin link-no-change {
+  color: $text-color;
+  text-decoration: none;
+  
+  &:hover,
+  &:visited,
+  &:active {
+    color: $text-color;
+  }
+}
+
+// 3. Google font
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+// 4. Base page styles
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  
+  body {
+    font-family: $body-font;
+    color: $text-color;
+    background-color: $bg-color;
+  }
+}
+
+// Outer wrapper around header + main (nesting used)
+body > div {
+  max-width: $max-width; // variable used
+  margin: 0 auto;
+}
+
+// 5. Typography (variables + nesting)
+h1, h2 {
+  font-family: $primary-font; // variable used
+  margin: 0;
+}
+
+// 6. Header / site title (nesting + mixin)
+header {
+  position: relative;
+  @include center-text; // mixin used
+  
+  padding: $header-padding; // variable used
+  
+  h1 {
+    font-size: $title-size; // variable used
+    line-height: $title-line-height; // variable used
+    margin: 0 0 1rem;
+    
+    a {
+      @include link-no-change; // mixin used
+    }
+  }
+}
+
+// 7. Horizontal rules / separators (mixin + nesting)
+.post-date {
+  &::after {
+    @include horizontal-rule; // mixin used
+  }
+}
+
+p {
+  &::after {
+    @include horizontal-rule; // mixin used
+  }
+}
+
+// 8. Navigation (About / Current Reviews / Archive) - nesting example
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      display: inline-block;
+      margin-right: 1rem;
+      
+      a {
+        @include link-no-change;
+      }
+    }
+  }
+}

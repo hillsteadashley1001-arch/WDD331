@@ -1,0 +1,307 @@
+/* 1. Google font */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* 2. Base page styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Outer wrapper around header + main */
+body > div {
+  max-width: 480px;      /* keeps it narrow like the mockup on mobile */
+  margin: 0 auto;        /* centers the column */
+}
+
+/* 3. Typography */
+/* All main headings use Lora */
+h1,
+h2 {
+  font-family: 'Lora', serif;
+  margin: 0;
+}
+
+/* Site title is big and tight */
+header h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+}
+
+/* 4. Header / site title */
+/* 4. Header / site title */
+header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem 0rem;
+}
+
+/* "Kids Read for Fun" */
+header h1 {
+  font-size: 2.8rem;      /* large title like the mockup */
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+/* Site title link: always #333, no hover change */
+header h1 a {
+  color: #333;
+  text-decoration: none;
+}
+
+header h1 a:hover,
+header h1 a:visited,
+header h1 a:active {
+  color: #333;
+}
+
+/* 5. Horizontal rules / separators */
+
+.post-date::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+p::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+/* 6. Navigation (About / Current Reviews / Archive) */
+/* <nav> directly under <header> */
+header nav {
+  text-align: center;
+  padding: 0.5rem 0 0.75rem;
+}
+
+/* The list of links */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* One item per line on mobile */
+header nav li {
+  margin: 0.5rem 0;
+}
+
+/* Links: About / Current Reviews / Archive */
+header nav a {
+  font-family: 'Lora', serif;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+/* nav link states */
+header nav a:visited {
+  color: #666;
+}
+
+header nav a:hover {
+  color: #00ddff;
+}
+
+header nav a:active {
+  color: #DEB887;
+}
+
+/* Above bar over the nav list */
+header nav::before {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+}
+
+/* Bottom bar under the nav list */
+header nav::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+}
+
+/* 7. Date line (January 6, 2016 / Dec 20, 2015) */
+.post-date {
+  position: relative;
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0.75rem 0 1rem;
+  padding-top: 1rem;
+}
+
+/* 8. Main content area */
+main {
+  padding: 0 1rem 2rem;
+}
+
+/* Post titles inside .post-content h2 */
+.post-content h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  color: #666;           /* gray like screenshot heading */
+  margin: 0 0 0.75rem;
+}
+
+/* Make the title links inherit the heading style */
+.post-content h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Book cover image inside figure */
+.post-content figure {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.post-content figure img {
+  display: block;
+  max-width: 60%;        /* a bit narrower than full width */
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Paragraph text under the image */
+.post-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+/* "Read More..." link inside the paragraph */
+.post-content p a {
+  font-family: 'Lora', serif;
+  color: #666;
+  text-decoration: none;
+}
+
+.post-content p a:hover {
+  color: #00ddff;
+}
+
+.post-content p a:active {
+  color: #DEB887;
+}
+
+/* 9. Large-screen layout */
+@media (min-width: 900px) {
+  /* Widen the whole page */
+  body > div {
+    max-width: 1200px;
+  }
+
+   header nav ul {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+  }
+    /* Add a border line between date and content on desktop */
+
+  section.post-content { 
+    border-bottom: 1px dotted #d0d0d0;
+    padding: 2rem;
+  }
+
+  p{
+    border-bottom: none;
+  }
+
+  /* Nav items inline */
+  header nav li {
+    margin: 0.5rem 0;
+  }
+
+  .post-date{
+    border-right: 1px solid #d0d0d0;
+    border-bottom: none;
+  }
+
+  h2.post-date {
+    border-bottom: none;
+  }
+
+  /* Header spacing */
+  header {
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  /* Main holds articles in a column */
+  main {
+    padding: 0 2rem 3rem;
+  }
+
+  /* Each article is a two-column row: date (left) + content (right) */
+  article {
+    display: flex;
+  }
+
+  /* Date column: narrow, right-aligned */
+  .post-date {
+    flex: 0 0 140px;
+    text-align: right;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove the date separator line on desktop */
+  .post-date::before {
+    display: none;
+  }
+
+    /* Remove the date separator line on desktop */
+  .post-date::after {
+    display: none;
+  }
+
+  /* Content column: wider, flexible */
+  .post-content {
+    flex: 1;
+  }
+
+  /* Post titles */
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Book covers: smaller, floated left so text wraps */
+  .post-content figure {
+    margin: 0 1.5rem 1rem 0;
+    text-align: center;
+    float: left;
+  }
+
+  .post-content figure img {
+    max-width: 200px;
+    height: auto;
+  }
+
+
+  p::after {
+  content: "";
+  display: block;
+  border-top: none;
+  }
+
+}
+
