@@ -1,0 +1,108 @@
+$border-color: #dee2e6;
+$text-muted: #6c757d;
+$promo-green: #28a745;
+$bg-gray: #6c757d;
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+.cart {
+  max-width: 400px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: $text-muted;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  &__badge {
+    background: $bg-gray;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: white;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child { border-bottom: none; }
+
+    &-name {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &-desc {
+      margin: 0;
+      font-size: 0.85rem;
+      color: $text-muted;
+    }
+
+    &-price {
+      color: $text-muted;
+    }
+
+    // Modifier for Promo
+    &--promo {
+      color: $promo-green;
+      .cart__item-name, .cart__item-desc, .cart__item-price {
+        color: $promo-green;
+      }
+    }
+
+    // Modifier for Total
+    &--total {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__promo-form {
+    display: flex;
+    padding: 10px;
+    border: 1px solid $border-color;
+    background: white;
+    border-radius: 4px;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: 1px solid $border-color;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+
+  &__button {
+    background: $bg-gray;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 500;
+  }
+}

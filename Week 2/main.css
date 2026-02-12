@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html body,
+body body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+body > div {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-family: "Lora", serif;
+  margin: 0;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem 0rem;
+}
+header h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+header h1 a {
+  color: #333;
+  text-decoration: none;
+}
+header h1 a:hover, header h1 a:visited, header h1 a:active {
+  color: #333;
+}
+
+.post-date::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+p::after {
+  content: "";
+  display: block;
+  border-top: 1px solid #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+nav ul li a:hover, nav ul li a:visited, nav ul li a:active {
+  color: #333;
+}/*# sourceMappingURL=main.css.map */

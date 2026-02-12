@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section class="cart">
+            <div class="cart__header">
+                <h2 class="cart__title">Your cart</h2>
+                <span class="cart__badge">3</span>
+            </div>
+
+            <ul class="cart__list">
+                <li class="cart__item">
+                    <div>
+                        <h3 class="cart__item-name">Product name</h3>
+                        <p class="cart__item-desc">Brief description</p>
+                    </div>
+                    <span class="cart__item-price">$12</span>
+                </li>
+                
+                <li class="cart__item">
+                    <div>
+                        <h3 class="cart__item-name">Second product</h3>
+                        <p class="cart__item-desc">Brief description</p>
+                    </div>
+                    <span class="cart__item-price">$8</span>
+                </li>
+                
+                <li class="cart__item">
+                    <div>
+                        <h3 class="cart__item-name">Third item</h3>
+                        <p class="cart__item-desc">Brief description</p>
+                    </div>
+                <span class="cart__item-price">$5</span>
+                </li>
+
+                <li class="cart__item cart__item--promo">
+                    <div>
+                        <h3 class="cart__item-name">Promo code</h3>
+                        <p class="cart__item-desc">EXAMPLECODE</p>
+                    </div>
+                    <span class="cart__item-price">-$5</span>
+                </li>
+
+                <li class="cart__item cart__item--total">
+                    <span class="cart__total-label">Total (USD)</span>
+                    <strong class="cart__total-price">$20</strong>
+                </li>
+            </ul>
+
+            <form class="cart__promo-form">
+                <input type="text" class="cart__input" placeholder="Promo code">
+                <button type="submit" class="cart__button">Redeem</button>
+            </form>
+        </section>
+    </body>
+</html>
